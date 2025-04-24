@@ -18,9 +18,7 @@ public class ShoppingCart {
                 .orElse(BigDecimal.ZERO);
     }
 
-    public BigDecimal totalWithDiscount(int percentage) {
-        return this.totalPrice().subtract(this.totalPrice()
-                .multiply(BigDecimal.valueOf(percentage))
-                .divide(BigDecimal.valueOf(100), 2, BigDecimal.ROUND_HALF_UP));
+    public BigDecimal totalWithDiscount(DiscountPolicy discountPolicy) {
+        return discountPolicy.apply(totalPrice());
     }
 }

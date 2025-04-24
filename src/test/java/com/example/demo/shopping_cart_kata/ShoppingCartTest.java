@@ -32,7 +32,7 @@ class ShoppingCartTest {
         Product product = new Product("name", BigDecimal.valueOf(50));
         cart.add(product);
 
-        BigDecimal discountedTotal = cart.totalWithDiscount(10);
+        BigDecimal discountedTotal = cart.totalWithDiscount(new PercentageDiscount(10));
 
         assertEquals(new BigDecimal("45.00"), discountedTotal);
     }
