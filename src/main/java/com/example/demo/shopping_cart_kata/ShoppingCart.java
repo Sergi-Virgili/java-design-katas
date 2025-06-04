@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-    private final List<CardItem> items = new ArrayList<>();
+    private final List<CartItem> items = new ArrayList<>();
 
     public void add(Product product) {
-        items.add(new CardItem(product));
+        items.add(new CartItem(product));
     }
 
     public BigDecimal totalPrice() {
-        return items.stream().map((CardItem cardItem) -> cardItem.price())
+        return items.stream().map((CartItem cardItem) -> cardItem.price())
                 .reduce(BigDecimal::add)
                 .orElse(BigDecimal.ZERO);
     }

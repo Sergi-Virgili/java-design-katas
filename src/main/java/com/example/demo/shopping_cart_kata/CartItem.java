@@ -2,11 +2,11 @@ package com.example.demo.shopping_cart_kata;
 
 import java.math.BigDecimal;
 
-public class CardItem {
+public class CartItem {
     private final Product product;
     private int quantity;
 
-    public CardItem(Product product) {
+    public CartItem(Product product) {
         this.product = product;
         this.quantity = 1;
     }
